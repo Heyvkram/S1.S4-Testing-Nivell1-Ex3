@@ -7,13 +7,8 @@ class DaysTest {
 
     @Test
     void getDayTest() {
-        int number = 0;
-        try {
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
             Days.getDay(100);
-            number = 0;
-        }catch (ArrayIndexOutOfBoundsException e){
-            number = 1;
-        }
-        assertEquals(1, number);
-     }
+        });
+    }
 }
